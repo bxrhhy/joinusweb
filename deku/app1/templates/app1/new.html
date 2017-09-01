@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="{%static "css/bootstrap.css" %}" />
+</head>
+<body style="">
+<div class="container" style="margin-top: 25%;">
+    <form action="{% url 'index:add_action' %}" method="post">
+        {% csrf_token %}
+<div class="panel panel-primary" style="border-radius: 15px">
+    <div class="panel-heading" style="padding: 0;border-radius:15px 15px 0 0;position: relative;text-align: center" >
+        <div class="tip title_tip" style="position: absolute;top: 0;left: 0;height: 100%;width: 100%;">
+            <h4>点击这里输入标题</h4>
+        </div>
+
+            <input type="text" name="title" value="" style="background:rgba(0,0,0,0);border: none;color: #fff;height: 43px;width: 100%;outline: none;padding-left: 20px;font-size: 18px" />
+    </div>
+    <div class="panel-body" style="padding: 0;position: relative;text-align: center">
+        <div class="tip content_tip" style="position: absolute;top: 0;left: 0;height: 100%;width: 100%;background:rgba(1,1,1,0.2);">
+            <h2 style="margin-top: 55px;">点击填写内容</h2>
+        </div>
+        <textarea name="content"  style="width: 100%;height: 170px;margin-bottom: -5px;overflow:hidden; resize:none; border: none;font-size: 16px;padding:10px ;" value=""></textarea>
+    </div>
+    <div class="panel-footer " style="border-radius: 0 0 15px 15px;text-align:center">
+        <div class="checkbox pull-left " style="width: 100%;"><a class="btn btn-default" style="padding: 10px;background: #ddd;" disabled="disabled">优先级</a>
+            <label ><a class="sec btn btn-default btn1">紧急</a>
+                <input value="1" class="hidden" name="section" type="radio" />
+            </label>
+            <label ><a class="sec btn btn-default btn2">优先</a>
+                <input value="2"  class="hidden" name="section" type="radio"  />
+            </label>
+            <label ><a class="sec btn btn-default btn3">暂缓</a>
+                <input value="3"  class="hidden" name="section" type="radio" />
+            </label>
+        </div>
+        <input class="level hidden"   type="text" name="level" value=""/>
+        <input  type="text" name="type" class="hidden" value="0"/>
+        <a class="btn btn-primary sub" >添加便签</a>
+        <input type="submit" value="submit" class="up hidden"/>
+    </div>
+</div>
+    </form>
+
+
+</div>
+
+</body>
+<script type="text/javascript" src="{% static "js/jquery-3.2.1.js" %}" ></script>
+<script type="text/javascript" src="{% static "js/bootstrap.js" %}" ></script>
+<script type="text/javascript">
+$(function () {
+$('.tip').on('click',function(){
+    $(this).hide();
+    $(this).next().focus()
+});
+$('.btn1').on('click',function () {
+    $(this).addClass('btn-danger')
+    $(this).parent().siblings().find('.btn').removeClass('btn-warning btn-info')
+
+})
+    $('.btn2').on('click',function () {
+    $(this).addClass('btn-warning')
+    $(this).parent().siblings().find('.btn').removeClass('btn-danger btn-info')
+})
+    $('.btn3').on('click',function () {
+    $(this).addClass('btn-info')
+    $(this).parent().siblings().find('.btn').removeClass('btn-warning btn-danger')
+})
+$('.sub').on('click',function () {
+    var i=$('.level').val()
+    if(!i){
+        alert('请选择优先级')
+    }
+    else {
+        $('.up').click()
+       alert('添加成功')
+    }
+
+})
+    $('.sec').on('click',function () {
+        var id=$(this).next().val()
+        $('.level').val(id)
+    })
+})
+
+</script>
+</html>

@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>约战科成篮球社&德酷工作室</title>
+    <link rel="stylesheet" href="{%static "css/bootstrap.css" %}" />
+{#    <script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>#}
+{#    <script type="text/javascript" src="js/bootstrap.min.js" ></script>#}
+    
+    <style>
+    	.fjx{
+    		display: flex;
+    		flex-direction: row;
+    		justify-content: space-around;
+    		margin-top: 20px;
+    	}
+    	.fjx-i{
+    		background-image: url({% static "img/1.png" %});
+    		height: 10px;
+    		width: 10px;
+    	}
+    	.wanted{
+    		font-size: 44px;
+    		font-family: "agency fb";
+    		border: 2px solid #FFF;
+    		background-image: url({% static "img/4.png" %});
+    		border-radius: 10px;
+    		color: #FFF;
+    		animation-name:change;
+    		animation-duration: 1s;
+    		animation-iteration-count:infinite;
+    	}
+    	/*@keyframes change{
+    		from{font-size: 44px;}
+    		
+    		to{font-size: 42px;}
+    		
+    	}*/
+    	.wanteddiv{
+    		margin-top: -30px ;
+    		text-align: center;
+    	}
+    	.img-intro{
+    		width: 100%;
+    		
+    	}
+    	.bm-group{
+    		margin-top: 100px;
+    		
+    	}
+    	.bmtitle{
+    		display: flex;
+    		flex-direction: row;
+    		justify-content: space-around;
+    		border-bottom: 0px;
+    		
+    		
+    	}
+    	.bmtab{
+    		height: 120px;
+    		width: 80px;
+    		border-bottom: 0px;
+    		margin-top: -55px;
+    	}
+    	.bmtab a{
+    		color:#337ab7 ;
+    		height: 100%;
+    		width: 100%;
+    		border-radius: 10px !important;
+    		border-bottom: 0px;
+    		font-size: 18px;
+    		font-weight: bold;
+    		line-height: 280px !important;
+    		
+    	}
+    	.bma-1{
+    		background-image: url({% static "img/ys.jpg" %});
+    		
+    		
+    	}
+    	.bma-2{
+    		background-image: url({% static "img/rh.jpg" %});
+    		
+    	}
+    	.bma-3{
+    		background-image: url({% static "img/hr.jpg" %});
+    		
+    	}
+    	.bma-4{
+    		background-image: url({% static "img/hj.jpg" %});
+    		
+    	}
+    	.bm-group{
+    		background: linear-gradient(to bottom,rgba(1,1,0,.4), rgba(255,0,0,0));
+    		
+    	}
+    	.tab-content{
+    		margin-top:70px;
+    		
+    	}
+    	.tab-pane{
+    		color: #fff;
+    		
+    	}
+    	.aactive{
+    		transition:transform .2s;
+    		transform: scale(1.1,1.1);
+    		transform-origin: center;
+    		/*height: 130px !important;
+    		width: 90px !important;*/
+    		/*margin-left: -5px;*/
+    		/*margin-top: -5px;*/
+    		/*font-size: 24px !important;*/
+    		box-shadow: #000 0px 1px 5px;
+    		color: #fff !important;
+    		
+    	}
+    	.summary{
+    		
+    		
+    		width: 100%;
+    		
+    	}
+    	.btn-join{
+    		box-shadow: #31B0D5 5px 5px 10px;
+    		font-size: 18px;
+    		font-family: "rage italic";
+    		animation-name:change2;
+    		animation-duration: 1s;
+    		animation-iteration-count:infinite;
+    	}
+    	
+    	@keyframes change2{
+    		from{font-size: 18px;}
+    		
+    		to{font-size: 20px;}
+    		
+    	}
+    	.modal{
+    		top: auto !important;
+    	}
+    </style>
+    <script type="text/javascript">
+    	
+   	
+   		
+    </script>
+</head>
+<body style="background: #ddd;">
+	<div class="intro" >
+		<img class="img-intro" src="{% static "img/big.jpg"%}" />
+		<div class="wanteddiv">
+			<a href="" class="wanted" >WANTED</a>			
+		</div>
+	</div>
+	<div class="summary">
+		<div class="fjx">
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+			<div class="fjx-i"></div>
+		</div>	
+		<div class="bm-group">
+			<ul class="nav nav-tabs bmtitle">
+				<li class="active bmtab"><a class="bma-1 aactive" href="#bm-1" data-toggle="tab">组织</a></li>
+				<li class="bmtab"><a class="bma-2 " href="#bm-2" data-toggle="tab">宣传</a></li>
+				<li class="bmtab"><a class="bma-3" href="#bm-3" data-toggle="tab">裁判</a></li>
+				<li class="bmtab"><a class="bma-4" href="#bm-4" data-toggle="tab">篮球</a></li>
+			</ul>
+			<div class="tab-content container">
+				<div class="tab-pane fade in active" id="bm-1" >
+					<h3>组织部</h3>
+					<p>组织训练、组队观赛、组织集体裁判培训与讲解等为主要活动形式展开。为调动起学校里篮球爱好者的激情，为他们提供展现自己的机会，在条件允许的情况下开展有关篮球的比赛。各个干事可以为赛事做策划出点子，来决定赛事以什么样子的形式展开，并且在比赛开始前协助其他同学运输体育器材等。在比赛的时候记录比赛。</p>
+					<div class="joinin" style="text-align: center;margin-bottom: 20px;margin-top: 10px;">
+						<button class="btn btn-info btn-join" data-toggle="modal" data-target="#myModal">JOIN US!</button>
+						<input type="hidden" value="组织部负责人(贾浩鑫)QQ" />
+						<input type="hidden" value="1275917783" />
+					</div>
+				</div>
+				<div class="tab-pane fade" id="bm-2"><h3>宣传部</h3>
+					<p>负责相关篮球活动比赛的宣传以及推广，积极联系主流媒体，宣传篮球协会的各项活动不断增进与校内其他团体的沟通与交流。</p>
+					<div class="joinin" style="text-align: center;margin-bottom: 20px;margin-top: 10px;">
+						<button class="btn btn-info btn-join"  data-toggle="modal" data-target="#myModal">JOIN US!</button>
+						<input type="hidden" value="宣传部负责人(张照阳)QQ" />
+						<input type="hidden" value="1406873616" />
+					</div>
+				</div>
+				<div class="tab-pane fade" id="bm-3"><h3>裁判部</h3>
+					<p>篮球裁判对篮球比赛极为关键，主要负责学校各项篮球活动和比赛的裁判人员调度。</br>
+要求要有正义感，认真负责，能坚持，能吃苦。
+只要你对篮球裁判感兴趣，我们欢迎你的加入。我们会根据部员的具体课表安排免费的相关知识教学</p>
+					<div class="joinin" style="text-align: center;margin-bottom: 20px;margin-top: 10px;">
+						<button class="btn btn-info btn-join"  data-toggle="modal" data-target="#myModal">JOIN US!</button>
+						<input type="hidden" value="裁判部负责人(梁嘉义)QQ" />
+						<input type="hidden" value="954736463" />
+					</div>
+				</div>
+				<div class="tab-pane fade" id="bm-4"><h3>篮球部</h3>
+					
+					<p>作为篮球协会核心部门，主要作用为发展带动学院各个院系篮球气氛，为广大爱好者提供各种交流篮球技术，培养篮球爱好的机会，活动于学院各个有篮球的角落，每个篮球部的人都有充分的机会提高发展自身的球技，以及带动身边的人喜欢篮球这项运动</p>
+					<div class="joinin" style="text-align: center;margin-bottom: 20px;margin-top: 10px;">						
+						<button class="btn btn-info btn-join" data-toggle="modal" data-target="#myModal">JOIN US!</button>
+						<input type="hidden" value="篮球部负责人(张喆)QQ" />
+						<input type="hidden" value="1030154708" />
+					</div>
+				</div>
+			</div>			
+		</div>
+		
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" >
+		<div class="modal-content">
+			<div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">加入方式</h4>
+	    </div>
+	    <div class="modal-body">
+	        <label>社长(黄山)QQ</label><p>734460092</p>
+	        <label class="bm-fzr"></label><p>734460092</p>
+      	</div>
+		<div class="modal-footer" style="text-align: center;">
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">我知道啦！</button>
+	    </div>
+	 	</div>
+		
+	</div>
+</body>
+<script type="text/javascript" src="{% static "js/jquery-3.2.1.js" %}" ></script>
+<script type="text/javascript" src="{% static "js/bootstrap.js" %}" ></script>
+	<script type="text/javascript">
+    	$('.bmtab a').on('click',function(){
+    		$(this).addClass('aactive').parent().siblings().children().removeClass('aactive')
+    	})
+    	$('.btn-join').on('click',function(){
+    		var flag=$(this).next().val()
+    		var fzr=$('.bm-fzr')
+    		var qq=$(this).next().next().val()
+    		var fzrq=$('.bm-fzr').next()
+    		fzrq.text(qq)
+    		fzr.text(flag)
+    		
+    	})
+    </script>
+</html>

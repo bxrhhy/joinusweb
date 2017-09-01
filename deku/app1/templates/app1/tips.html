@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>articles</title>
+    <link rel="stylesheet" href="{%static "css/bootstrap.css" %}" />
+    <style>
+    </style>
+</head>
+<body >
+    <div class="container" style="margin-top:50px;">
+        {% for tip in tips %}
+        <div class="tip">
+            <div class="panel panel-primary">
+                <input class="old_id hidden" value="{{ tip.id }}"/>
+                <div class="panel-heading tip_title" data-toggle="collapse" data-target="#{{ tip.id }}">
+                    {{ tip.title }}
+                    <div class="btng pull-right hidden" style="    margin-top: -6px;display: flex;flex-direction: row;justify-content: space-between;">
+                         <a class="btn btn-danger b_del"  style="margin-right: 5px"><span class="glyphicon glyphicon-remove"></span></a>
+{#                         <a class="btn btn-info" href="" style="margin-right: 5px"><span class="glyphicon glyphicon-pencil"></span></a>#}
+                         <a class="btn btn-success b_done" ><span class="glyphicon glyphicon-ok"></span></a>
+                     </div>
+                </div>
+                <div id="{{ tip.id }}" class="collapse">
+                  <div class="panel-footer">
+                    {{ tip.content }}
+                  </div>
+                  </div>
+                </div>
+        </div>
+        {% endfor %}
+            <form class="hidden" action="{% url 'index:del_action1' %}" method="post">
+                    {% csrf_token %}
+                    <input class="new_id" type="text" name="del_id" value=""/>
+                    <input class="del_sub" type="submit"/>
+                </form>
+             <form class="hidden" action="{% url 'index:done_action1' %}" method="post">
+                    {% csrf_token %}
+                    <input class="new_id1" type="text" name="done_id" value=""/>
+                    <input class="done_sub" type="submit"/>
+                </form>
+
+    </div>
+
+
+
+</body>
+<script type="text/javascript" src="{% static "js/jquery-3.2.1.js" %}" ></script>
+<script type="text/javascript" src="{% static "js/bootstrap.js" %}" ></script>
+<script type="text/javascript">
+
+
+        $('.tip_title').on('click',function(){
+            $(this).find('.btng').toggleClass('hidden')
+        })
+ $('.b_del').on('click',function () {
+        var i=$('.old_id').val()
+        $('.new_id').val(i)
+        var a=$('.new_id')
+        if(!a){
+            alert('删除失败，请联系作者')
+        }
+        $('.del_sub').click()
+    })
+
+    $('.b_done').on('click',function(){
+        var i=$('.old_id').val()
+        $('.new_id1').val(i)
+        $('.done_sub').click()
+    })
+</script>
+</html>
